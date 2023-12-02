@@ -4,4 +4,18 @@ include(__DIR__."/controllers/Pages.php");
 
 $page = new Pages;
 
-$page->index();
+$url = $_SERVER["REQUEST_URI"];
+
+if($url === '/kezdolap') {
+    $page->index();
+}
+if($url === '/kulfold') {
+    $page->kulfold();
+}
+if($url === '/gazdasag') {
+    $page->gazdasag();
+}
+if($url === '/tudomany') {
+    $page->tudomany();
+}
+

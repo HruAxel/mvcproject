@@ -9,11 +9,9 @@
 
   <div class="container">
 
-    
 
   </div>
     <?php include(__DIR__."/includes/footer.php") ?>
   </body>
 </html>
 
-<!-- A VIDEÓ 23:51 PERCÉNÉL TARTOTTAM! -->
