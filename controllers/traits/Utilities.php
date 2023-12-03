@@ -6,4 +6,6 @@ trait Utilities {
         include(__DIR__."/../../views/$file.php");
     }
 
+
+
 }

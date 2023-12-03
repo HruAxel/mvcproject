@@ -9,6 +9,7 @@ class Pages {
     function index() {
 
         $this->view('index');
+        
     }
 
     function kulfold() {
@@ -24,5 +25,12 @@ class Pages {
     function tudomany() {
 
         $this->view('tudomany');
+    }
+
+    function admin() {
+        $this->view('admin');
+
+        
+
     }
 }

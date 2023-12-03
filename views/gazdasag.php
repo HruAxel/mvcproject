@@ -9,7 +9,7 @@
 
   <div class="container">
 
-    
+    <p>gazdaság</p>
 
   </div>
     <?php include(__DIR__."/includes/footer.php") ?>
