@@ -31,6 +31,5 @@ class Pages {
         $this->view('admin');
 
         
-
     }
 }

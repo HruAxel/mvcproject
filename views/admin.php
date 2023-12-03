@@ -1,6 +1,14 @@
-<?php
+<?php 
+  include(__DIR__."/../controllers/proccesses/Proccess.php");
+
+  $proccess = new Proccess;
+
+  $proccess->admin_log_proccess();
+
+  
 
 ?>
+
 
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
@@ -14,7 +22,7 @@
   <?php include(__DIR__ . "/includes/navbar.php") ?>
 
   <div class="form_area">
-        <form action="../feladat/process/admin_log_process.php" method="post">
+        <form action="" method="post">
 
             <h2>Üdvözöljük, a továbbiakhoz jelentkezzen be!</h2>
 
@@ -30,7 +38,7 @@
             if (isset($_SESSION["success"])) {
                 print "<li class=\"success\">{$_SESSION["success"]}</li>";
 
-                unset($_SESSION["errors"]);
+                unset($_SESSION["success"]);
             }
             ?>
 
@@ -51,4 +59,6 @@
 
 </html>
 
-<!-- A VIDEÓ 23:51 PERCÉNÉL TARTOTTAM! -->
+<?php
+unset($_SESSION["errors"], $_SESSION["success"]);
+?>

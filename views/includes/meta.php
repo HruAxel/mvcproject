@@ -20,6 +20,9 @@ if($url === "/gazdasag") {
 if($url === "/tudomany") {
     echo '<title>Tudomány</title>';
 }
+if($url === "/admin/log") {
+    echo '<title>Admin Bejelentkezés</title>';
+}
 ?>
 
 <?php 
