@@ -1,13 +1,3 @@
-<?php 
-  include(__DIR__."/../controllers/proccesses/Proccess.php");
-
-  $proccess = new Proccess;
-
-  $proccess->admin_log_proccess();
-
-  
-
-?>
 
 
 <!doctype html>
@@ -22,31 +12,25 @@
   <?php include(__DIR__ . "/includes/navbar.php") ?>
 
   <div class="form_area">
-        <form action="" method="post">
+        <form action="/admin/log" method="post">
 
             <h2>Üdvözöljük, a továbbiakhoz jelentkezzen be!</h2>
 
             <?php
-            if (isset($_SESSION["errors"])) {
-                foreach ($_SESSION["errors"] as $err)
+            if (isset($_SESSION["_flash"]["errors"])) {
+                foreach ($_SESSION["_flash"]["errors"] as $err)
                     print "<li class=\"error\">{$err}</li>";
 
-                unset($_SESSION["errors"]);
-            }
-            ?>
-            <?php
-            if (isset($_SESSION["success"])) {
-                print "<li class=\"success\">{$_SESSION["success"]}</li>";
 
-                unset($_SESSION["success"]);
             }
             ?>
+
 
             <input type="text" name="name" id="name" placeholder="Név">
 
             <input type="password" name="password" id="password" placeholder="Jelszó">
 
-            <button type="submit" name="submitted" value="ok" id="btn">Bejelentkezés</button>
+            <button  name="submitted" id="btn">Bejelentkezés</button>
         </form>
     </div>
     <div class="welcome">
@@ -59,6 +43,4 @@
 
 </html>
 
-<?php
-unset($_SESSION["errors"], $_SESSION["success"]);
-?>
+<?php unset($_SESSION["_flash"]);?>

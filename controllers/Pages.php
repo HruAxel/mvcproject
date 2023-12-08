@@ -1,35 +1,72 @@
 <?php
 
-include(__DIR__."/traits/Utilities.php");
+session_start();
 
-class Pages {
+include(__DIR__ . "/traits/Utilities.php");
+include(__DIR__ . "/classes/Validation.php");
+include(__DIR__ . "/classes/Session.php");
+
+class Pages
+{
+
+
+    public $session;
 
     use Utilities;
 
-    function index() {
-
-        $this->view('index');
-        
+    function __construct()
+    {
+        $this->session = new Session;
     }
 
-    function kulfold() {
+    function index()
+    {
+
+        $this->view('index');
+    }
+
+    function kulfold()
+    {
 
         $this->view('kulfold');
     }
 
-    function gazdasag() {
+    function gazdasag()
+    {
 
         $this->view('gazdasag');
     }
 
-    function tudomany() {
+    function tudomany()
+    {
 
         $this->view('tudomany');
     }
 
-    function admin() {
+    function admin()
+    {
         $this->view('admin');
+    }
 
-        
+    function adminProcess()
+    {
+
+        $errors = [];
+
+        $errors =  Validation::adderror(
+            Validation::lenght(
+                $_POST["name"],
+                2,
+                30,
+                'A név 4 és 30 karakter között kell legyen!'
+            ),
+            $errors
+        );
+        if(count($errors) > 0 ) {
+            $this->session->setFlash('errors', $errors);
+            header("location:" . $_SERVER["HTTP_REFERER"]);
+        } else {
+
+        }
     }
 }
