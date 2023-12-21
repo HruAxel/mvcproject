@@ -1,7 +1,12 @@
 <?php
 
-include(__DIR__."/controllers/Pages.php");
-include(__DIR__."/controllers/classes/Route.php");
+spl_autoload_register( function($file) {
+    $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
+    include("$file.php");
+} );
+
+use controllers\Pages;
+use controllers\classes\Route;
 
 $page = new Pages;
 
@@ -29,6 +34,10 @@ $page = new Pages;
  });
  Route::post('/admin/log', function() use($page) {
     $page->adminProcess();
+ });
+
+ Route::get('/admin/article', function() use($page) {
+    $page->adminArticle();
  });
 
 

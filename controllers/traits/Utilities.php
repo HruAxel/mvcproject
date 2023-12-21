@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers\traits;
+
 trait Utilities {
 
     function view($file) {

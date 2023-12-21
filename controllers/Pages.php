@@ -1,10 +1,12 @@
 <?php
 
+namespace controllers;
+
 session_start();
 
-include(__DIR__ . "/traits/Utilities.php");
-include(__DIR__ . "/classes/Validation.php");
-include(__DIR__ . "/classes/Session.php");
+use controllers\traits\Utilities;
+use controllers\classes\Validation;
+use controllers\classes\Session; 
 
 class Pages
 {
@@ -66,7 +68,15 @@ class Pages
             $this->session->setFlash('errors', $errors);
             header("location:" . $_SERVER["HTTP_REFERER"]);
         } else {
-
+            header("location:/admin/article");
         }
     }
+
+    function adminArticle()
+    {
+
+        $this->view('admin_article');
+    }
+
+
 }

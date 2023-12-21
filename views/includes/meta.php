@@ -29,7 +29,11 @@ if($url === "/admin/log") {
 
     if($url === "/admin/log") {
         echo '<link href="/views/styles/admin_log.css" rel="stylesheet">';
-    } else {
+    }
+    elseif($url === "/admin/article") {
+        echo '<link href="/views/styles/admin_page.css" rel="stylesheet">';
+    }
+    else {
         echo '<link href="/views/styles/user_page.css" rel="stylesheet">';
     }
 ?>

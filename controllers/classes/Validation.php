@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers\classes;
+
 class Validation {
     public static function lenght($data, $min, $max, $msg) {
 

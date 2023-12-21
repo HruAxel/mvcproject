@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers\classes;
+
 class Route
 {
 
